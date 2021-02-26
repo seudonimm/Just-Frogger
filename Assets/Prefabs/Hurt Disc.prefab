@@ -49,7 +49,7 @@ MonoBehaviour:
   meshOutOfDate: 1
   blendMode: 1
   scaleMode: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 1, g: 0.66682273, b: 0, a: 1}
   zTest: 4
   zOffsetFactor: 0
   zOffsetUnits: 0
@@ -141,3 +141,4 @@ MonoBehaviour:
   disc: {fileID: 7460376573374143217}
   maxRadius: 30
   rate: 30
+  t: 0

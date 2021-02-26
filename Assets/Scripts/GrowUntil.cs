@@ -6,22 +6,35 @@ using Shapes;
 public class GrowUntil : MonoBehaviour
 {
     [SerializeField] Disc disc;
-    [SerializeField] float maxRadius, rate;
+    [SerializeField] float maxRadius, rate, t;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        t = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         disc.Radius += Time.deltaTime * rate;
+        disc.Color = new Color(disc.Color.r, disc.Color.g, disc.Color.b, Mathf.Lerp(0, 1, t));
+        t -= Time.deltaTime * 3;
 
-        if(disc.Radius >= maxRadius)
+        if (t <= 0)
         {
             Destroy(gameObject);
+            //StartCoroutine(FadeAway());
         }
+    }
+
+    IEnumerator FadeAway()
+    {
+        disc.Color = new Color(disc.Color.r, disc.Color.g, disc.Color.b, Mathf.Lerp(0, 1, t));
+
+        yield return new WaitForSeconds(t);
+
+        Destroy(gameObject);
+
     }
 }

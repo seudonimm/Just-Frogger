@@ -9,13 +9,16 @@ public class TriangleController : MonoBehaviour
 
     [SerializeField] float followSpeed;
 
-    [SerializeField] Line laser;
+    [SerializeField] Line laser, laserReady;
 
     [SerializeField] public RaycastHit2D hit;
 
     [SerializeField] LaserState laserState;
 
-    [SerializeField] float timer, timerDefault;
+    [SerializeField] float timer, timerDefault, laserReadyTimer;
+
+    [SerializeField] bool right, left, top, bottom;
+    [SerializeField] float xPosition, yPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,32 @@ public class TriangleController : MonoBehaviour
         hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + 30f), LayerMask.NameToLayer("Player"));
         timer = timerDefault;
 
+        laserReady.Start = new Vector3(0, 0, 0);
+        laserReady.End = new Vector3(0, 0, 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (right)
+        {
+            xPosition = 17f;
+        }
+        else if (left)
+        {
+            xPosition = -19f;
+        }
+
+        if (top)
+        {
+            yPosition = 10f;
+        }
+        else if (bottom)
+        {
+            yPosition = -10f;
+        }
+
         LaserControl();
         timer -= Time.deltaTime;
         if(hit.collider != null)
@@ -50,8 +74,47 @@ public class TriangleController : MonoBehaviour
 
                 laser.Start = Vector3.zero;
                 laser.End = Vector3.zero;
-                transform.position = new Vector3(17f, Vector3.MoveTowards(transform.position, player.transform.position, followSpeed).y, -1f);
+                if (right || left)
+                {
+                    transform.position = new Vector3(xPosition, Vector3.MoveTowards(transform.position, player.transform.position, followSpeed).y, -1f);
+                }
+                if(top || bottom)
+                {
+                    transform.position = new Vector3(Vector3.MoveTowards(transform.position, player.transform.position, followSpeed).x, yPosition, -1f);
+                }
 
+
+                if (laserState == LaserState.Follow)
+                {
+                    if (right)
+                    {
+                        laser.Start = new Vector3(Mathf.Lerp(5, 0, timer), 0, 0);
+                        laser.End = new Vector3(Mathf.Lerp(-50, 0, timer), 0, 0);
+                    }
+                    if (left)
+                    {
+                        laser.Start = new Vector3(Mathf.Lerp(-5, 0, timer), 0, 0);
+                        laser.End = new Vector3(Mathf.Lerp(50, 0, timer), 0, 0);
+                    }
+                    if (top)
+                    {
+                        laser.Start = new Vector3(0, Mathf.Lerp(5, 0, timer), 0);
+                        laser.End = new Vector3(0, Mathf.Lerp(-50, 0, timer), 0);
+                    }
+                    if (bottom)
+                    {
+                        laser.Start = new Vector3(0, Mathf.Lerp(-5, 0, timer), 0);
+                        laser.End = new Vector3(0, Mathf.Lerp(50, 0, timer), 0);
+                    }
+                    laser.Color = Color.gray;
+
+                    laserReady.Start = laser.Start;
+                    laserReady.End = laser.End;
+
+                    laserReady.Thickness = Mathf.Lerp(1, 0.2f, timer) * 5f;
+                    laserReady.Color = new Color(laserReady.Color.r, laserReady.Color.g, laserReady.Color.b, Mathf.Lerp(.3f, 0, timer));
+
+                }
 
                 if (timer <= 0)
                 {
@@ -59,30 +122,47 @@ public class TriangleController : MonoBehaviour
                     laserState = LaserState.Startup;
                     timer = timerDefault;
                 }
+
                 break;
 
             case LaserState.Startup:
 
-                laser.Start = new Vector3(5, 0, 0);
-                laser.End = new Vector3(-50, 0, 0);
-
+                laserReady.Thickness = Mathf.Lerp(0.2f, 1, timer) * 5f;
+                laserReady.Color = new Color(laserReady.Color.r, laserReady.Color.g, laserReady.Color.b, Mathf.Lerp(0, .3f, timer));
                 //laser.transform.position = transform.position;
-                laser.Color = Color.gray;
                 if (timer <= 0)
                 {
                     laserState = LaserState.Active;
-                    timer = timerDefault;
+                    timer = timerDefault/2f;
 
                 }
                 break;
 
             case LaserState.Active:
+                laserReady.Start = laser.Start;
+                laserReady.End = laser.End;
 
                 laser.Color = Color.red;
 
                 laser.ColorStart = Color.red;
                 laser.ColorEnd = Color.red;
-                hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + 30f), LayerMask.NameToLayer("Player"));
+                if (right)
+                {
+                    hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x - 50f, transform.position.y), 1 << LayerMask.NameToLayer("Player"));
+                }
+                if (left)
+                {
+                    hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x + 50f, transform.position.y), 1 << LayerMask.NameToLayer("Player"));
+                }
+                if (top)
+                {
+                    hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - 50f), 1 << LayerMask.NameToLayer("Player"));
+                }
+                if (bottom)
+                {
+                    hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + 50f), 1 << LayerMask.NameToLayer("Player"));
+                }
+
 
                 if (timer <= 0)
                 {
@@ -97,7 +177,7 @@ public class TriangleController : MonoBehaviour
 
                 laser.Start = Vector3.zero;
                 laser.End = Vector3.zero;
-                hit = Physics2D.Linecast(transform.position, transform.position);
+                hit = Physics2D.Linecast(transform.position, transform.position, 1 << LayerMask.NameToLayer("None"));
 
                 if (timer <= 0)
                 {
