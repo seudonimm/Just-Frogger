@@ -11,15 +11,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - None
-  - Block
+  - 
+  - 
   - Obstacle
   - PlayerBox
   - PlayerCollider
-  - 
+  - Player
   - 
   - 
   - 

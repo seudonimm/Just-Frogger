@@ -106,7 +106,7 @@ public class ShapeSpawner : MonoBehaviour
 
     void RandomNumber()
     {
-        rand = Random.Range(0, 2/*shapes.Capacity*/);
+        rand = Random.Range(0, shapes.Capacity);
 
         //return rand;
     }

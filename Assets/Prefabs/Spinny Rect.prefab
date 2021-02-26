@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2912301812798981277}
   - component: {fileID: 930993055979674714}
   - component: {fileID: 759133135190798000}
-  - component: {fileID: 3213228128712622321}
   m_Layer: 8
   m_Name: Spinny Rect (1)
   m_TagString: Obstacle
@@ -87,7 +86,6 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -112,7 +110,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!61 &2912301812798981277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,24 +171,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3213228128712622321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756981373330790870}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1395413934, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 2
-  _slowRotationSpeed: 5
-  _fastRotationSpeed: 200
-  _rotateAroundAxis: 2
-  _relativeTo: 1
-  _reverse: 0
 --- !u!1 &2822809584326327079
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +244,7 @@ GameObject:
   - component: {fileID: 8977617999439734007}
   - component: {fileID: 8977617999439733964}
   - component: {fileID: 1298787338954728339}
-  - component: {fileID: 620012698713681360}
+  - component: {fileID: 2997161080282207894}
   m_Layer: 8
   m_Name: Spinny Rect
   m_TagString: Obstacle
@@ -323,7 +302,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &620012698713681360
+--- !u!114 &2997161080282207894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,15 +311,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8977617999439733965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1395413934, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f8ba519d6ba741409ff9722b4bcac65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _slowRotationSpeed: 5
-  _fastRotationSpeed: 200
-  _rotateAroundAxis: 2
-  _relativeTo: 1
-  _reverse: 0
+  rotateSpeed: 30
 --- !u!1 &9082034945184064192
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +360,6 @@ GameObject:
   - component: {fileID: 2310128886884556858}
   - component: {fileID: 864774809095530695}
   - component: {fileID: 3693308513348283492}
-  - component: {fileID: 7953942890488911793}
   m_Layer: 8
   m_Name: Spinny Rect
   m_TagString: Obstacle
@@ -458,7 +431,6 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -483,7 +455,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!61 &2310128886884556858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -545,21 +516,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7953942890488911793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9160363201778419512}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1395413934, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 2
-  _slowRotationSpeed: 5
-  _fastRotationSpeed: 200
-  _rotateAroundAxis: 2
-  _relativeTo: 1
-  _reverse: 0

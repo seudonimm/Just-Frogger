@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Rewired;
 using Shapes;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    private Player player;
 
     [SerializeField] Disc playerDisc;
     [SerializeField] Collider2D playerCollider;
