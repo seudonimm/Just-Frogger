@@ -60,7 +60,9 @@ public class ShapeSpawner : MonoBehaviour
         {
             if (directions.enabled)
             {
-                directions.enabled = false;
+
+                StartCoroutine(FadeOut());
+                //directions.enabled = false;
             }
             Instantiate(shapes[rand], spawnPoint.transform.position, spawnPoint.transform.rotation);
             timer = timerDefault;
@@ -70,6 +72,15 @@ public class ShapeSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator FadeOut()
+    {
+        directions.alpha = Mathf.Lerp(1, 0, Time.time);
+
+        yield return new WaitForSeconds(1f);
+        directions.enabled = false;
+
+
+    }
     void TimedEvents()
     {
         if(!triangles[0].activeSelf && gameTimer > 10)

@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355648870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3781,6 +3781,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457925948894277689, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 592383117454934218, guid: 7513f2b0903fd9645b9aa6439785d4b6,
         type: 3}
       propertyPath: m_Enabled
@@ -3817,6 +3822,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 592383118775282765, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266847388851420448, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324518416415624529, guid: 7513f2b0903fd9645b9aa6439785d4b6,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3860,6 +3875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623159105116754498, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5733150296000933320, guid: 7513f2b0903fd9645b9aa6439785d4b6,
         type: 3}
@@ -3929,6 +3949,26 @@ PrefabInstance:
     - target: {fileID: 5733150296000933322, guid: 7513f2b0903fd9645b9aa6439785d4b6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133038582903080018, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480573255980662207, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070538214059143120, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205854402053507366, guid: 7513f2b0903fd9645b9aa6439785d4b6,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

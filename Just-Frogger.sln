@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesRuntime", "ShapesRuntime.csproj", "{B31DCB97-D00C-4D36-5326-73D4A97DCE3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{10784A58-FAB0-50F3-38ED-77D8CA521910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesEditor", "ShapesEditor.csproj", "{E3C98C10-A036-68EF-F551-C9705A9D341D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B31DCB97-D00C-4D36-5326-73D4A97DCE3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31DCB97-D00C-4D36-5326-73D4A97DCE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31DCB97-D00C-4D36-5326-73D4A97DCE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31DCB97-D00C-4D36-5326-73D4A97DCE3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10784A58-FAB0-50F3-38ED-77D8CA521910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10784A58-FAB0-50F3-38ED-77D8CA521910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10784A58-FAB0-50F3-38ED-77D8CA521910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10784A58-FAB0-50F3-38ED-77D8CA521910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C98C10-A036-68EF-F551-C9705A9D341D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C98C10-A036-68EF-F551-C9705A9D341D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C98C10-A036-68EF-F551-C9705A9D341D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C98C10-A036-68EF-F551-C9705A9D341D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
