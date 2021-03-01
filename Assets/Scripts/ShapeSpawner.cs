@@ -15,7 +15,7 @@ public class ShapeSpawner : MonoBehaviour
 
     [SerializeField] float timer, timerDefault, gameTimer;
 
-    [SerializeField] TextMeshProUGUI gameTimerText, endGameTimeText;
+    [SerializeField] TextMeshProUGUI gameTimerText, endGameTimeText, hiScoreTimeText, newScoreText;
 
     [SerializeField] PlayerController pc;
 
@@ -29,6 +29,9 @@ public class ShapeSpawner : MonoBehaviour
         timer = timerDefault;
 
         gameOverUI.SetActive(false);
+
+        newScoreText.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -48,6 +51,13 @@ public class ShapeSpawner : MonoBehaviour
                 gameOverUI.SetActive(true);
                 endGameTimeText.text = gameTimerText.text;
             }
+
+            if(Values.HiScore < gameTimer)
+            {
+                Values.HiScore = gameTimer;
+                newScoreText.enabled = true;
+            }
+            hiScoreTimeText.text = Values.HiScore.ToString();
 
             if(Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
             {

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 457925948894277689}
   - component: {fileID: 8205854402053507366}
   - component: {fileID: 8789889754291635735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: small Square (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 2266847388851420448}
   - component: {fileID: 7480573255980662207}
   - component: {fileID: 6488645786412322013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: small Square
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5733150297579619891}
   - component: {fileID: 5733150297579619900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sidetoside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,8 +483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveX: 1
   moveY: 0
-  start: {x: -2.5, y: 0}
-  end: {x: 2.5, y: 0}
+  start: {x: 5.25, y: 0}
+  end: {x: 10.75, y: 0}
   dest: {x: 0, y: 0}
   t: 0
   moveSpeed: 1
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 8070538214059143120}
   - component: {fileID: 5623159105116754498}
   - component: {fileID: 4463913532841538228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: small Square (3)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 3324518416415624529}
   - component: {fileID: 6133038582903080018}
   - component: {fileID: 8745531264199134246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: small Square (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

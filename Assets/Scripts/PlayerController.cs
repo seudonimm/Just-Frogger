@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] Disc playerDisc;
+    [SerializeField] Transform playerDiscTransform;
     [SerializeField] Collider2D playerCollider;
     public bool lose;
     [SerializeField] bool hitByObstacle;
@@ -57,6 +58,43 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        PlayerAnimaiton();
+    }
+
+    void PlayerAnimaiton()
+    {
+        
+
+        if((moveLeft && moveUp) || (moveDown && moveRight))
+        {
+            playerDiscTransform.localScale = new Vector2(.9f, 1.1f);
+            playerDiscTransform.localRotation = Quaternion.Euler(0, 0, 45f);
+        }
+        else if ((moveLeft && moveDown) || (moveUp && moveRight))
+        {
+            playerDiscTransform.localScale = new Vector2(.9f, 1.1f);
+            playerDiscTransform.localRotation = Quaternion.Euler(0, 0, -45f);
+        }
+        else if (moveLeft || moveRight)
+        {
+            playerDiscTransform.localScale = new Vector2(1.1f, .9f);
+            playerDiscTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else if (moveUp || moveDown)
+        {
+            playerDiscTransform.localScale = new Vector2(.9f, 1.1f);
+            playerDiscTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else
+        {
+            playerDiscTransform.localScale = new Vector2(1, 1);
+            playerDiscTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        }
+
+
     }
 
     void Move()

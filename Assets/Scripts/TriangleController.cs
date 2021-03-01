@@ -112,7 +112,7 @@ public class TriangleController : MonoBehaviour
                     laserReady.End = laser.End;
 
                     laserReady.Thickness = Mathf.Lerp(1, 0.2f, timer) * 5f;
-                    laserReady.Color = new Color(laserReady.Color.r, laserReady.Color.g, laserReady.Color.b, Mathf.Lerp(.3f, 0, timer));
+                    laserReady.Color = new Color(Color.grey.r, Color.grey.g, Color.grey.b, Mathf.Lerp(.3f, 0, timer));
 
                 }
 
@@ -128,7 +128,7 @@ public class TriangleController : MonoBehaviour
             case LaserState.Startup:
 
                 laserReady.Thickness = Mathf.Lerp(0.2f, 1, timer) * 5f;
-                laserReady.Color = new Color(laserReady.Color.r, laserReady.Color.g, laserReady.Color.b, Mathf.Lerp(0, .3f, timer));
+                laserReady.Color = Color.Lerp(new Color(Color.red.r, Color.red.g, Color.red.b, Mathf.Lerp(0, .3f, timer)), new Color(Color.grey.r, Color.grey.g, Color.grey.b, Mathf.Lerp(0, .3f, timer)), timer);
                 //laser.transform.position = transform.position;
                 if (timer <= 0)
                 {
