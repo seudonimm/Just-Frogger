@@ -44,7 +44,7 @@ public class ShapeSpawner : MonoBehaviour
             TimedEvents();
         }
 
-        if (pc.lose)
+        if (pc.lose || !pc)
         {
             if (!gameOverUI.activeSelf)
             {

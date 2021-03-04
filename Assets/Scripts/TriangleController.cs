@@ -52,7 +52,10 @@ public class TriangleController : MonoBehaviour
             yPosition = -10f;
         }
 
-        LaserControl();
+        if (player)
+        {
+            LaserControl();
+        }
         timer -= Time.deltaTime;
         if(hit.collider != null)
         {
