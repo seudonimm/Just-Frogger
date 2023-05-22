@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour
 
         if (hitByObstacle)
         {
-            playerDisc.Color = new Color(playerDisc.Color.r, playerDisc.Color.g, playerDisc.Color.b, .5f);
+            var discColor = playerDisc.Color;
+            discColor.a = .5f;
+            playerDisc.Color = discColor;
             invulnTimer -= Time.deltaTime;
 
             if(invulnTimer <= 0)
@@ -125,41 +127,11 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveLeft = true;
-        }
-        else
-        {
-            moveLeft = false;
-        }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveRight = true;
-        }
-        else
-        {
-            moveRight = false;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveUp = true;
-        }
-        else
-        {
-            moveUp = false;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveDown = true;
-        }
-        else
-        {
-            moveDown = false;
-        }
+        moveLeft = Input.GetKey(KeyCode.A);
+        moveRight = Input.GetKey(KeyCode.D);
+        moveUp = Input.GetKey(KeyCode.W);
+        moveDown = Input.GetKey(KeyCode.S);
 
     }
 

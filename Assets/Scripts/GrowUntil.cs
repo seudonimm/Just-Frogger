@@ -18,7 +18,11 @@ public class GrowUntil : MonoBehaviour
     void Update()
     {
         disc.Radius += Time.deltaTime * rate;
-        disc.Color = new Color(disc.Color.r, disc.Color.g, disc.Color.b, Mathf.Lerp(0, 1, t));
+
+        var discColor = disc.Color;
+        discColor.a = Mathf.Lerp(0, 1, t);
+        disc.Color = discColor;
+
         t -= Time.deltaTime * 3;
 
         if (t <= 0)

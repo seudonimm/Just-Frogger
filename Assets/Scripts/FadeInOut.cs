@@ -21,6 +21,5 @@ public class FadeInOut : MonoBehaviour
         t = Mathf.PingPong(Time.time, 1);
         text.alpha = alpha;
 
-        //transform.localScale = new Vector3(size, size, size);
     }
 }
